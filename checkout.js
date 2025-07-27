@@ -27,13 +27,12 @@ document.getElementById('checkout-form').addEventListener('submit', function (e)
 
   if (name && email && address && city && phone) {
     alert(`Thank you, ${name}! Your order has been placed.`);
-    // ممكن هنا تحفظي البيانات لو هتستخدميها بعدين
-    window.location.href = "index.html"; // أو أي صفحة تانية بعد التأكيد
+    window.location.href = "index.html"; 
   } else {
     alert("Please fill in all fields.");
   }
 });
-// ✅ Load product details
+//  Load product details
 fetch('https://dummyjson.com/products/' + localStorage.getItem('selectedProductId'))
   .then(response => response.json())
   .then(data => {
