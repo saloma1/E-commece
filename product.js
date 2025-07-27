@@ -74,7 +74,7 @@ fetch(`https://dummyjson.com/products/${productId}`)
 
         container.innerHTML = productHTML;
 
-        // ✅ Show real reviews from API or fallback message
+        //  Show real reviews from API or fallback message
         const reviewsContainer = document.getElementById('reviews-container');
         if (product.reviews && product.reviews.length > 0) {
             const reviewsHTML = product.reviews.map(r => `
@@ -88,7 +88,7 @@ fetch(`https://dummyjson.com/products/${productId}`)
             reviewsContainer.innerHTML = `<p>No reviews available.</p>`;
         }
 
-        // ✅ Add to cart
+        //  Add to cart
         document.getElementById('add-to-cart').addEventListener('click', () => {
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
             const exists = cart.find(item => item.id === product.id);
@@ -114,7 +114,7 @@ fetch(`https://dummyjson.com/products/${productId}`)
             alert('Product added to cart ✅');
         });
 
-        // ✅ Load suggested products
+        //  Load suggested products
         fetch('https://dummyjson.com/products?limit=4&skip=10')
             .then(res => res.json())
             .then(data => {
@@ -135,12 +135,12 @@ fetch(`https://dummyjson.com/products/${productId}`)
             });
     });
 
-// 🔁 Change main image
+//  Change main image
 function changeMainImage(src) {
     document.getElementById('main-img').src = src;
 }
 
-// 🔁 Tabs logic
+//  Tabs logic
 function showTab(tabId) {
     document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
     document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
@@ -149,7 +149,7 @@ function showTab(tabId) {
     document.getElementById(tabId).classList.add('active');
 }
 
-// 🔁 Suggested product click
+//  Suggested product click
 function selectSuggestedProduct(id) {
     localStorage.setItem('selectedProductId', id);
     location.href = 'product.html';
