@@ -20,9 +20,9 @@ const productsContainer = document.getElementById('category-products');
 const selectedCategory = localStorage.getItem('selectedCategory');
 
 if (!selectedCategory) {
-  categoryTitle.innerText = "No category selected.";
+  categoryTitle.innerText = "Sorry, No category selected.";
 } else {
-  categoryTitle.innerText = `Category: ${selectedCategory}`;
+  categoryTitle.innerText = `The Category is: ${selectedCategory}`;
 
   fetch(`https://dummyjson.com/products/category/${selectedCategory}`)
     .then(res => res.json())
